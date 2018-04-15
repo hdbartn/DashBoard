@@ -4,7 +4,7 @@
 		Tasklist
 	</a>
 
-	<a class="navbar-brand float-right" href="/create">
+	<a class="navbar-brand float-right" href="/tasks/create">
 		<i class="far fa-plus-square"></i>
 		Taak aanmaken
 	</a>

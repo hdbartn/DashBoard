@@ -8,7 +8,32 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.navbar {
+  margin-bottom: 1rem;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  .button-hidden {
+    display: none;
+    margin: 0;
+    border: none;
+    background: none;
+    align-self: flex-end;
+    cursor: pointer;
+  }
+  a {
+    color: $dark;
+    font-style: normal;
+  }
+}
+.task-item:hover {
+  .button-hidden {
+    display: inline !important;
+  }
+}
+
+.btn-none {
+  padding: 0 0.2rem !important;
 }

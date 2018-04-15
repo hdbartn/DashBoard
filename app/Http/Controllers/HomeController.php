@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function Index() {
-		$tasks = \App\Task::all();
-		return view('overview', compact('tasks'));
+		$active = \App\Task::getActive();
+		$done = \App\Task::getDone();
+
+		return view('overview', compact('active', 'done'));
 	}
 }

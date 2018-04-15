@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        View::composer('tasks/overview', function($view) {
+      		$active = \App\Task::getActive();
+      		$done = \App\Task::getDone();
+
+          $view->with(compact('active', 'done'));
+        });
     }
 
     /**
